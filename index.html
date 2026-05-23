@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>مكتب النور للصرافة</title>
+<link rel="stylesheet" href="project2.css">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <svg width="60" height="60" viewBox="0 0 100 100">
+            <defs>
+                <radialGradient id="grad1" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#ffd700; stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#00c6ff; stop-opacity:1" />
+                </radialGradient>
+            </defs>
+            <circle cx="50" cy="50" r="45" fill="url(#grad1)" stroke="#0a1f44" stroke-width="3"/>
+            <text x="50%" y="55%" text-anchor="middle" font-size="28" fill="#0a1f44" font-family="Tahoma" font-weight="bold">NE</text>
+        </svg>
+    </div>
+
+    <nav class="links">
+        <a href="#" onclick="showHome()">الرئيسية</a>
+        <a href="#rates">الحوالات</a>
+        <a href="contact.html">تواصل</a>
+    </nav>
+
+    <div class="user-icon">
+        <a href="contact.html" title="تواصل معنا">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-7a3 3 0 1 0-3-3 3 3 0 0 0 3 3z"/>
+            </svg>
+        </a>
+    </div>
+</header>
+
+<div id="mainPage">
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="typewriter">النور للصرافة</h1>
+            <p>أفضل أسعار العملات وخدمات التحويل السريع والآمن</p>
+        </div>
+    </section>
+
+    <section id="rates" class="section">
+        <h2>💰 قائمة الحوالات</h2>
+        <div class="grid" id="currencyGrid"></div>
+    </section>
+
+    <footer>
+        © 2026 Al-Nour Exchange | جميع الحقوق محفوظة
+    </footer>
+
+</div>
+
+<section id="conversionPage" class="section conversion-page">
+    <h2 id="conversionTitle"></h2>
+    <div class="form">
+        <input type="number" id="amount" placeholder="">
+        <input type="text" id="accountNumber" placeholder="رقم الحساب">
+        <input type="text" id="recipientName" placeholder="اسم المستلم الرباعي">
+        <input type="text" id="referenceNumber" placeholder="رقم الإشاري">
+        <select id="countryCode">
+            <option value="+216">تونس +216</option>
+            <option value="+20">مصر +20</option>
+            <option value="+218" selected>ليبيا +218</option>
+            <option value="+90">تركيا +90</option>
+            <option value="+966">السعودية +966</option>
+        </select>
+        <input type="text" id="phoneNumber" placeholder="رقم الهاتف">
+        <input type="number" id="discount" placeholder="نسبة الخصم">
+        <button onclick="convert()">تحويل</button>
+        <button onclick="showHome()">رجوع للرئيسية</button>
+        <p id="result"></p>
+    </div>
+</section>
+
+<audio id="cashSound" src="audio/Audio_Hits_Money_Counter_Sound_Effect_#shorts_#soundeffects.mp3"></audio>
+
+<script src="project2.js"></script>
+</body>
+</html>

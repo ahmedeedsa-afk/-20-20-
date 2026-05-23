@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>تحويل اليورو EUR</title>
+<link rel="stylesheet" href="project2.css">
+<style>
+body.conversion-page { background: none; }
+.conversion { 
+    background: url('images/eur\ to\ lyd.png') center/cover no-repeat; 
+    min-height: 80vh; 
+}
+</style>
+</head>
+<body class="conversion-page">
+
+<header class="navbar">
+    <div class="logo">النور للصرافة</div>
+    <nav class="links">
+        <a href="project20.html">الرئيسية</a>
+    </nav>
+</header>
+
+<section class="section conversion">
+    <h2>تحويل اليورو 💶</h2>
+    <div class="form">
+        <input type="number" id="amount" placeholder="أدخل المبلغ باليورو">
+        <button onclick="convert()">تحويل</button>
+        <p id="result"></p>
+    </div>
+</section>
+
+<audio id="cashSound" src="audio/Audio_Hits_Money_Counter_Sound_Effect_#shorts_#soundeffects.mp3"></audio>
+
+<script>
+function convert(){
+    const rate = 9.55;
+    let amount = document.getElementById('amount').value;
+    const resultEl = document.getElementById('result');
+    if(amount){
+        resultEl.innerText = `القيمة بالدينار الليبي: ${(amount*rate).toFixed(2)} د.ل`;
+        document.getElementById('cashSound').play();
+    } else {
+        resultEl.innerText = 'الرجاء إدخال مبلغ';
+    }
+}
+</script>
+
+</body>
+</html>
